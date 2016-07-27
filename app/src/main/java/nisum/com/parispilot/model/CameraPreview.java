@@ -1,9 +1,5 @@
 package nisum.com.parispilot.model;
 
-/**
- * Created by cgonzalez on 7/26/16.
- */
-
 import android.content.Context;
 import android.hardware.Camera;
 import android.hardware.Camera.AutoFocusCallback;
@@ -14,8 +10,7 @@ import android.view.SurfaceView;
 
 import java.io.IOException;
 
-public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
-{
+public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
 
     private SurfaceHolder mHolder;
     private Camera mCamera;
@@ -23,8 +18,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     private AutoFocusCallback autoFocusCallback;
 
 
-    public CameraPreview(Context context, Camera camera, PreviewCallback previewCb, AutoFocusCallback autoFocusCb)
-    {
+    public CameraPreview(Context context, Camera camera, PreviewCallback previewCb, AutoFocusCallback autoFocusCb) {
         super(context);
         mCamera = camera;
         previewCallback = previewCb;
@@ -54,16 +48,14 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     public void surfaceCreated(SurfaceHolder holder) {
         // The Surface has been created, now tell the camera where to draw the preview.
-        try
-        {
+        try {
             mCamera.setPreviewDisplay(holder);
         } catch (IOException e) {
             Log.d("DBG", "Error setting camera preview: " + e.getMessage());
         }
     }
 
-    public void surfaceDestroyed(SurfaceHolder holder)
-    {
+    public void surfaceDestroyed(SurfaceHolder holder) {
         // Camera preview released in activity
     }
 
@@ -72,14 +64,14 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
          * If your preview can change or rotate, take care of those events here.
          * Make sure to stop the preview before resizing or reformatting it.
          */
-        if (mHolder.getSurface() == null){
+        if (mHolder.getSurface() == null) {
             // preview surface does not exist
             return;
         }
         // stop preview before making changes
         try {
             mCamera.stopPreview();
-        } catch (Exception e){
+        } catch (Exception e) {
             // ignore: tried to stop a non-existent preview
         }
         try {
@@ -90,7 +82,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             mCamera.setPreviewCallback(previewCallback);
             mCamera.startPreview();
             mCamera.autoFocus(autoFocusCallback);
-        } catch (Exception e){
+        } catch (Exception e) {
             Log.d("DBG", "Error starting camera preview: " + e.getMessage());
         }
     }
