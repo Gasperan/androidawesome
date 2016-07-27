@@ -79,9 +79,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 1) {
             if (data!= null) {
                 String barcode = data.getStringExtra("BARCODE");
-                if (barcode.equals("NULL")) {
-                    Toast.makeText(this, "something wrong..", Toast.LENGTH_LONG).show();
-                } else {
+                if (!barcode.equals("NULL")) {
                     Log.d("barcode", barcode);
                     Toast.makeText(this, barcode, Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, ResultActivity.class);
@@ -89,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     //search.setQuery(barcode, true);
                     //search.setIconifiedByDefault(false);
                 }
+
             }
         }
 
