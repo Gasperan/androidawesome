@@ -71,23 +71,24 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.manualbutton)
     public void onClickManualInputButton(View view) {
         showInputDialog();
-        //Toast.makeText(this, "manual button", Toast.LENGTH_LONG).show();
     }
 
     //this captures the result from barcode and populates in the searchView.
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
-            String barcode = data.getStringExtra("BARCODE");
-            if (barcode.equals("NULL")) {
-
-            } else {
-                Log.d("barcode", barcode);
-                Toast.makeText(this, barcode, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, ResultActivity.class);
-                startActivity(intent);
-                //search.setQuery(barcode, true);
-                //search.setIconifiedByDefault(false);
+            if (data!= null) {
+                String barcode = data.getStringExtra("BARCODE");
+                if (barcode.equals("NULL")) {
+                    Toast.makeText(this, "something wrong..", Toast.LENGTH_LONG).show();
+                } else {
+                    Log.d("barcode", barcode);
+                    Toast.makeText(this, barcode, Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, ResultActivity.class);
+                    startActivity(intent);
+                    //search.setQuery(barcode, true);
+                    //search.setIconifiedByDefault(false);
+                }
             }
         }
 
