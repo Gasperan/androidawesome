@@ -37,7 +37,7 @@
         android:id="@+id/imageView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/scan_icon" />
+        android:src="@drawable/logo_paris" />
 
     <TextView
         android:layout_width="wrap_content"
