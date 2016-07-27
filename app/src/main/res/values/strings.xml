@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Paris Pilot</string>
     <string name="main_label">SCAN CODE</string>
+    <string name="barcode">Scanning...</string>
+    <string name="problems">Item not found, please try again.</string>
+    <string name="result_label">Details</string>
+    <string name="input_label">Insert code</string>
 </resources>
