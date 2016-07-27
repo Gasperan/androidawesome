@@ -1,5 +1,6 @@
 package nisum.com.parispilot;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.barcodeButton)
     public void onClickBarcode(View view) {
         Toast.makeText(this, "barcode button", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this,ResultActivity.class);
+        startActivity(intent);
     }
 
     @OnClick(R.id.qrcodeButton)
