@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nisum.com.parispilot">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +19,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/barcode"
+            android:launchMode="singleTop"
+            android:name=".model.Barcode"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog"
+            >
         </activity>
         <activity android:name=".ResultActivity"
             android:label="@string/result_label"

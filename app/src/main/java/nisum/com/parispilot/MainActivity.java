@@ -11,6 +11,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import nisum.com.parispilot.model.Barcode;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.barcodeButton)
     public void onClickBarcode(View view) {
-        Toast.makeText(this, "barcode button", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this,ResultActivity.class);
-        startActivity(intent);
+        //Toast.makeText(this, "barcode button", Toast.LENGTH_LONG).show();
+        startActivityForResult(new Intent(MainActivity.this,Barcode.class),1 );
     }
 
     @OnClick(R.id.qrcodeButton)
     public void onClickQRCode(View view) {
-        Toast.makeText(this, "qrcode button", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "qrcode button", Toast.LENGTH_LONG).show();
+        startActivityForResult(new Intent(MainActivity.this,Barcode.class),1 );
     }
 
     @OnClick(R.id.manualbutton)
