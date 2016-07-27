@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Paris Pilot</string>
+    <string name="main_label">SCAN CODE</string>
 </resources>
