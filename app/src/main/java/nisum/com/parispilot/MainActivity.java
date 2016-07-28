@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int CAMERA_REQUEST = INITIAL_REQUEST + 1;
 
     private static boolean splashLoaded = false;
-    private final int splashSeconds = 3000;
+    private final int splashSeconds = 1000;
 
     @BindView(R.id.textView) TextView mTextView;
     @BindView(R.id.barcodeButton) ImageView mbarcodeButton;

@@ -1,14 +1,9 @@
 package nisum.com.parispilot;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-
-import butterknife.BindView;
 
 public class SurveyActivity extends AppCompatActivity {
 
