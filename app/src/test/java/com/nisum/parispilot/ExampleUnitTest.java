@@ -1,4 +1,4 @@
-package nisum.com.parispilot;
+package com.nisum.parispilot;
 
 import org.junit.Test;
 

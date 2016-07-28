@@ -1,4 +1,4 @@
-package nisum.com.parispilot;
+package com.nisum.parispilot;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

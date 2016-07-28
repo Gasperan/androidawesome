@@ -1,4 +1,4 @@
-package nisum.com.parispilot;
+package com.nisum.parispilot;
 
 import android.Manifest;
 import android.content.DialogInterface;
@@ -20,7 +20,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import nisum.com.parispilot.model.Barcode;
+import com.nisum.parispilot.model.Barcode;
 
 public class MainActivity extends AppCompatActivity {
 

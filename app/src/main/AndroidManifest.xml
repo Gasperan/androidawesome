@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nisum.com.parispilot">
+    package="com.nisum.parispilot">
 
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.nisum.parispilot.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,16 +24,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".model.Barcode"
+            android:name="com.nisum.parispilot.model.Barcode"
             android:label="@string/barcode"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Dialog"></activity>
         <activity
-            android:name=".ResultActivity"
+            android:name="com.nisum.parispilot.ResultActivity"
             android:label="@string/result_label"
             android:screenOrientation="portrait" />
-        <activity android:name=".SurveyActivity"></activity>
+        <activity android:name="com.nisum.parispilot.SurveyActivity"></activity>
     </application>
 
 </manifest>

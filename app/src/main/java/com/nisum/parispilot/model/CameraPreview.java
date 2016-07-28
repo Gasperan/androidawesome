@@ -1,4 +1,4 @@
-package nisum.com.parispilot.model;
+package com.nisum.parispilot.model;
 
 import android.content.Context;
 import android.hardware.Camera;

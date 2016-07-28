@@ -1,4 +1,4 @@
-package nisum.com.parispilot.model;
+package com.nisum.parispilot.model;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import net.sourceforge.zbar.ImageScanner;
 import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
 
-import nisum.com.parispilot.R;
+import com.nisum.parispilot.R;
 
 public class Barcode extends Activity {
 
