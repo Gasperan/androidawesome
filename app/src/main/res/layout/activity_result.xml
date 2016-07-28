@@ -26,9 +26,10 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:id="@+id/imageView"
-        android:layout_centerVertical="true"
+        android:src="@drawable/thumb_down"
+        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/thumb_down" />
+        android:layout_marginTop="56dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,10 +37,10 @@
         android:text="@string/problems"
         android:textColor="@android:color/black"
         android:id="@+id/textView"
-        android:textSize="15sp"
-        android:layout_above="@+id/imageView"
+        android:textSize="17sp"
+        android:layout_below="@+id/appbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="54dp" />
+        android:layout_marginTop="63dp" />
 
 
 
