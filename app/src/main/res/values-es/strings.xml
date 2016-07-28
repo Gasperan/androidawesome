@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Piloto Paris</string>
+    <string name="main_label">ESCANEAR CODIGO</string>
+    <string name="barcode">Escaneando...</string>
+    <string name="problems">Item no encontrado, por favor intenta nuevamente.</string>
+    <string name="result_label">Detalles</string>
+    <string name="input_label">Inserte código</string>
+</resources>
