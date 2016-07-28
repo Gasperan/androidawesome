@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nisum.com.parispilot.model.Barcode;
 
-public class MainActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     private static final String[] CAMERA_PERMS = {
             Manifest.permission.CAMERA
@@ -31,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int INITIAL_REQUEST = 1337;
     private static final int CAMERA_REQUEST = INITIAL_REQUEST + 1;
-    /** Duration of wait **/
-    private static boolean splashLoaded = false;
-    private final int splashSeconds = 5000;
+
 
     @BindView(R.id.textView)
     TextView mTextView;
@@ -47,43 +44,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //ImageView imageView = (ImageView)findViewById(R.id.imageViewSplash);
 
 
-        if(!splashLoaded){
-            setContentView(R.layout.activity_splash);
-            splashLoaded = true;
+        setContentView(R.layout.activity_splash);
 
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    setContentView(R.layout.activity_main);
-                    ButterKnife.bind(MainActivity.this);
-                    if (!canAccessCamera()) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            requestPermissions(CAMERA_PERMS, CAMERA_REQUEST);
-                        }
-                    }
-                }
-            }, splashSeconds);
 
-        }else{
-
-            setContentView(R.layout.activity_main);
-            ButterKnife.bind(MainActivity.this);
-            if (!canAccessCamera()) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    requestPermissions(CAMERA_PERMS, CAMERA_REQUEST);
-                }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
             }
-        }
+        }, 5000);
+
+
+
 
     }
 
     @OnClick(R.id.barcodeButton)
     public void onClickBarcode(View view) {
         if (canAccessCamera()) {
-            startActivityForResult(new Intent(MainActivity.this, Barcode.class), 1);
+            startActivityForResult(new Intent(SplashActivity.this, Barcode.class), 1);
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(CAMERA_PERMS, CAMERA_REQUEST);
@@ -93,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.qrcodeButton)
     public void onClickQRCode(View view) {
-        startActivityForResult(new Intent(MainActivity.this, Barcode.class), 1);
+        startActivityForResult(new Intent(SplashActivity.this, Barcode.class), 1);
     }
 
     @OnClick(R.id.manualbutton)
@@ -121,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
 
     protected void showInputDialog() {
         // get prompts.xml view
-        LayoutInflater layoutInflater = LayoutInflater.from(MainActivity.this);
+        LayoutInflater layoutInflater = LayoutInflater.from(SplashActivity.this);
         View promptView = layoutInflater.inflate(R.layout.input_dialog, null);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SplashActivity.this);
         alertDialogBuilder.setView(promptView);
 
         final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
@@ -131,8 +114,8 @@ public class MainActivity extends AppCompatActivity {
         alertDialogBuilder.setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(MainActivity.this, editText.getText(), Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                        Toast.makeText(SplashActivity.this, editText.getText(), Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(SplashActivity.this, ResultActivity.class);
                         startActivity(intent);
                     }
                 })
