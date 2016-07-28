@@ -38,11 +38,17 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.barcodeButton) ImageView mbarcodeButton;
     @BindView(R.id.qrcodeButton) ImageView mQRCodeButton;
     @BindView(R.id.manualbutton) ImageView mManualInputButton;
+    String tittleDialog;
+    String bodyDialog;
+    String buttonDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_main);
+        tittleDialog = getResources().getString(R.string.dialog_title);
+        bodyDialog = getResources().getString(R.string.dialog_body);
+        buttonDialog = getResources().getString(R.string.dialog_button);
         if (!splashLoaded) {
             setContentView(R.layout.splash);
             splashLoaded = true;
@@ -150,4 +156,23 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle(tittleDialog)
+                .setMessage(bodyDialog)
+                .setPositiveButton(buttonDialog, new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent surveyIntent = new Intent(MainActivity.this, SurveyActivity.class);
+                        startActivity(surveyIntent);
+                    }
+
+                })
+                .show();
+    }
 }
+
+

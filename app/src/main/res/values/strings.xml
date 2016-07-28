@@ -6,4 +6,8 @@
     <string name="result_label">Details</string>
     <string name="input_label">Insert code</string>
     <string name="not_found">Product\nNot Found</string>
+    <string name="url_survey">https://docs.google.com/a/nisum.com/forms/d/e/1FAIpQLSeJ_EgjU5Za9Hq80PYA2tuRNIWNybml-dRNow9PIlBRku14AQ/viewform</string>
+    <string name="dialog_title">Feed Back</string>
+    <string name="dialog_body">Ayudanos a mejorar, respondiendo una pequeña encuesta :)</string>
+    <string name="dialog_button">Si!</string>
 </resources>
