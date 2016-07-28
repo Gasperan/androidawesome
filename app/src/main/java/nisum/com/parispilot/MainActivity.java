@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -30,24 +31,41 @@ public class MainActivity extends AppCompatActivity {
     private static final int INITIAL_REQUEST = 1337;
     private static final int CAMERA_REQUEST = INITIAL_REQUEST + 1;
 
+    private static boolean splashLoaded = false;
+    private final int splashSeconds = 4000;
 
-    @BindView(R.id.textView)
-    TextView mTextView;
-    @BindView(R.id.barcodeButton)
-    ImageView mbarcodeButton;
-    @BindView(R.id.qrcodeButton)
-    ImageView mQRCodeButton;
-    @BindView(R.id.manualbutton)
-    ImageView mManualInputButton;
+    @BindView(R.id.textView) TextView mTextView;
+    @BindView(R.id.barcodeButton) ImageView mbarcodeButton;
+    @BindView(R.id.qrcodeButton) ImageView mQRCodeButton;
+    @BindView(R.id.manualbutton) ImageView mManualInputButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        if (!canAccessCamera()) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(CAMERA_PERMS, CAMERA_REQUEST);
+
+        if (!splashLoaded) {
+            setContentView(R.layout.splash);
+            splashLoaded = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    setContentView(R.layout.activity_main);
+                    ButterKnife.bind(MainActivity.this);
+                    if (!canAccessCamera()) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            requestPermissions(CAMERA_PERMS, CAMERA_REQUEST);
+                        }
+                    }
+                }
+            }, splashSeconds);
+
+        } else {
+            setContentView(R.layout.activity_main);
+            ButterKnife.bind(MainActivity.this);
+            if (!canAccessCamera()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(CAMERA_PERMS, CAMERA_REQUEST);
+                }
             }
         }
     }
@@ -77,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
-            if (data!= null) {
+            if (data != null) {
                 String barcode = data.getStringExtra("BARCODE");
                 if (!barcode.equals("NULL")) {
                     Log.d("barcode", barcode);

@@ -1,16 +1,16 @@
 package nisum.com.parispilot;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ResultActivity extends AppCompatActivity {
 
-    @BindView(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.backButton) ImageView mBackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,17 +18,11 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         ButterKnife.bind(this);
 
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
         });
     }
-
-
 }
