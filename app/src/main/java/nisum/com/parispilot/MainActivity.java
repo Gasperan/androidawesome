@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -31,29 +30,22 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int INITIAL_REQUEST = 1337;
     private static final int CAMERA_REQUEST = INITIAL_REQUEST + 1;
-    /** Duration of wait **/
-    private static boolean splashLoaded = false;
-    private final int splashSeconds = 5000;
 
-    @BindView(R.id.textView)
-    TextView mTextView;
-    @BindView(R.id.barcodeButton)
-    ImageView mbarcodeButton;
-    @BindView(R.id.qrcodeButton)
-    ImageView mQRCodeButton;
-    @BindView(R.id.manualbutton)
-    ImageView mManualInputButton;
+    private static boolean splashLoaded = false;
+    private final int splashSeconds = 4000;
+
+    @BindView(R.id.textView) TextView mTextView;
+    @BindView(R.id.barcodeButton) ImageView mbarcodeButton;
+    @BindView(R.id.qrcodeButton) ImageView mQRCodeButton;
+    @BindView(R.id.manualbutton) ImageView mManualInputButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //ImageView imageView = (ImageView)findViewById(R.id.imageViewSplash);
 
-
-        if(!splashLoaded){
-            setContentView(R.layout.activity_splash);
+        if (!splashLoaded) {
+            setContentView(R.layout.splash);
             splashLoaded = true;
-
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -67,8 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }, splashSeconds);
 
-        }else{
-
+        } else {
             setContentView(R.layout.activity_main);
             ButterKnife.bind(MainActivity.this);
             if (!canAccessCamera()) {
@@ -77,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-
     }
 
     @OnClick(R.id.barcodeButton)
@@ -105,13 +95,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
-            if (data!= null) {
+            if (data != null) {
                 String barcode = data.getStringExtra("BARCODE");
                 if (!barcode.equals("NULL")) {
                     Log.d("barcode", barcode);
                     Toast.makeText(this, barcode, Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, ResultActivity.class);
                     startActivity(intent);
+                    //search.setQuery(barcode, true);
+                    //search.setIconifiedByDefault(false);
                 }
 
             }

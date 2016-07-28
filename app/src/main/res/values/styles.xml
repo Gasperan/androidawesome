@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#3F51B5</item>
         <!-- Light Indigo -->
-        <item name="colorPrimaryDark">#3949AB</item>
+        <item name="colorPrimaryDark">#1e88e5</item>
         <!-- Dark Indigo -->
         <item name="colorAccent">#00B0FF</item>
         <!-- Blue -->
