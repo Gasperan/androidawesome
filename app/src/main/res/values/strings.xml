@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Paris Pilot</string>
-    <string name="main_label">SCAN CODE</string>
+    <string name="main_label">scan code</string>
     <string name="barcode">Scanning...</string>
     <string name="problems">We are working on getting you all the latest info on your favorite products.\nIn the meantime, there are plenty more great products to find out about!</string>
     <string name="result_label">Details</string>
