@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int INITIAL_REQUEST = 1337;
     private static final int CAMERA_REQUEST = INITIAL_REQUEST + 1;
-    private static final String SHOWCASE_ID = "main_showcas6gdfg";
+    private static final String SHOWCASE_ID = "main_showcase";
 
     private static boolean splashLoaded = false;
     private final int splashSeconds = 1000;
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         ShowcaseConfig config = new ShowcaseConfig();
         config.setDelay(withDelay);
 
-        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this);
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this,SHOWCASE_ID);
 
         sequence.setConfig(config);
 
