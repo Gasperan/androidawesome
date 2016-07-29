@@ -4,10 +4,11 @@
     <string name="barcode">Enfoca el código deseado</string>
     <string name="problems">Estamos trabajando en conseguir la última información sobre sus productos favoritos. \nMientras tanto, puedes seguir buscando información de otros.</string>
     <string name="result_label">Detalles</string>
-    <string name="input_label">Inserte código</string>
+    <string name="input_label">Inserte código del producto</string>
     <string name="url_survey">https://docs.google.com/a/nisum.com/forms/d/e/1FAIpQLSeJ_EgjU5Za9Hq80PYA2tuRNIWNybml-dRNow9PIlBRku14AQ/viewform</string>
     <string name="dialog_title">FeedBack</string>
     <string name="dialog_body">Ayudanos a mejorar, respondiendo una pequeña encuesta :)</string>
     <string name="dialog_button">Si!</string>
     <string name="not_found">Producto no encontrado</string>
+    <string name="enterText">ejemplo: 1246433</string>
 </resources>
