@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Paris Pilot</string>
+    <string name="app_name">Test App</string>
     <string name="main_label">Get a product info</string>
-    <string name="barcode">Scanning...</string>
+    <string name="barcode">Focus the desired code</string>
     <string name="problems">We are working on getting you all the latest info on your favorite products.\nIn the meantime, there are plenty more great products to find out about!</string>
     <string name="result_label">Details</string>
     <string name="input_label">Insert code</string>
     <string name="not_found">Product\nNot Found</string>
     <string name="url_survey">https://docs.google.com/a/nisum.com/forms/d/e/1FAIpQLSeJ_EgjU5Za9Hq80PYA2tuRNIWNybml-dRNow9PIlBRku14AQ/viewform</string>
-    <string name="dialog_title">Feed Back</string>
+    <string name="dialog_title">FeedBack</string>
     <string name="dialog_body">Help us to improve filling this little survey :)</string>
     <string name="dialog_button">Yes!</string>
 </resources>
