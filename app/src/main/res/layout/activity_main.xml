@@ -25,7 +25,8 @@
         android:textSize="30sp"
         android:layout_above="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp" />
+        android:layout_marginBottom="60dp"
+        android:gravity="center_vertical|center_horizontal" />
 
     <LinearLayout
         android:orientation="horizontal"
