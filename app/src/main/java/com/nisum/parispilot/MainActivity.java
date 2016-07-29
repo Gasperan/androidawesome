@@ -9,17 +9,20 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.nisum.parispilot.model.Barcode;
+
 import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence;
 import uk.co.deanwild.materialshowcaseview.ShowcaseConfig;
 
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
 
     private static final String[] CAMERA_PERMS = {
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity{
 
     private static final int INITIAL_REQUEST = 1337;
     private static final int CAMERA_REQUEST = INITIAL_REQUEST + 1;
-    private static final String SHOWCASE_ID = "main_showcase";
+    private static final String SHOWCASE_ID = "main_showcas6gdfg";
 
     private static boolean splashLoaded = false;
     private final int splashSeconds = 1000;
@@ -38,10 +41,10 @@ public class MainActivity extends AppCompatActivity{
     private ImageView mQRButton;
     private ImageView mManualbutton;
 
-    //dialog's fields
     String tittleDialog;
     String bodyDialog;
     String buttonDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,17 +55,44 @@ public class MainActivity extends AppCompatActivity{
         mQRButton = (ImageView) findViewById(R.id.qrcodeButton);
         mManualbutton = (ImageView) findViewById(R.id.manualbutton);
 
+        mBarcodeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (canAccessCamera()) {
+                    startActivityForResult(new Intent(MainActivity.this, Barcode.class), 1);
+                } else {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        requestPermissions(CAMERA_PERMS, CAMERA_REQUEST);
+                    }
+                }
+            }
+        });
+
+        mQRButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(new Intent(MainActivity.this, Barcode.class), 1);
+            }
+        });
+
+        mManualbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showInputDialog();
+            }
+        });
+
         tittleDialog = getResources().getString(R.string.dialog_title);
         bodyDialog = getResources().getString(R.string.dialog_body);
         buttonDialog = getResources().getString(R.string.dialog_button);
 
         if (!splashLoaded) {
-            setContentView(R.layout.splash);
+            //setContentView(R.layout.splash);
             splashLoaded = true;
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    setContentView(R.layout.activity_main);
+                    //setContentView(R.layout.activity_main);
                     if (!canAccessCamera()) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                             requestPermissions(CAMERA_PERMS, CAMERA_REQUEST);
@@ -72,7 +102,7 @@ public class MainActivity extends AppCompatActivity{
             }, splashSeconds);
 
         } else {
-            setContentView(R.layout.activity_main);
+            //setContentView(R.layout.activity_main);
             if (!canAccessCamera()) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     requestPermissions(CAMERA_PERMS, CAMERA_REQUEST);
@@ -87,22 +117,69 @@ public class MainActivity extends AppCompatActivity{
         ShowcaseConfig config = new ShowcaseConfig();
         config.setDelay(withDelay);
 
-        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this, SHOWCASE_ID);
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this);
 
         sequence.setConfig(config);
 
-        sequence.addSequenceItem(mBarcodeButton,"Lector de codigo de barras",
-                "Aqui puedes escanear codigos de barra", "GOT IT");
+        sequence.addSequenceItem(mBarcodeButton, "Lector de codigo de barras",
+                "Aqui puedes escanear codigos de barra", "OK");
 
-        sequence.addSequenceItem(mQRButton,"Lector de codigos QR",
-                "con este boton escaneas codigos QR", "GOT IT");
+        sequence.addSequenceItem(mQRButton, "Lector de codigos QR",
+                "con este boton escaneas codigos QR", "OK");
 
-        sequence.addSequenceItem(mManualbutton,"Escaner manual",
-                "Además, si ninguno de los anteriores te ha funcionado, puedes intentar ingresar el codigo manualmente", "GOT IT");
+        sequence.addSequenceItem(mManualbutton, "Escaner manual",
+                "Además, si ninguno de los anteriores te ha funcionado, puedes intentar ingresar el codigo manualmente", "OK");
 
         sequence.start();
     }
 
+
+    private boolean canAccessCamera() {
+        return (hasPermission(Manifest.permission.CAMERA));
+    }
+
+    private boolean hasPermission(String perm) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return (PackageManager.PERMISSION_GRANTED == checkSelfPermission(perm));
+        }
+        return true;
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (data != null) {
+                String barcode = data.getStringExtra("BARCODE");
+                if (!barcode.equals("NULL")) {
+                    Log.d("barcode", barcode);
+                    Toast.makeText(this, barcode, Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, ResultActivity.class);
+                    startActivity(intent);
+                    //search.setQuery(barcode, true);
+                    //search.setIconifiedByDefault(false);
+                }
+
+            }
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle(tittleDialog)
+                .setMessage(bodyDialog)
+                .setPositiveButton(buttonDialog, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent surveyIntent = new Intent(MainActivity.this, SurveyActivity.class);
+                        startActivity(surveyIntent);
+                    }
+
+                })
+                .show();
+    }
 
     protected void showInputDialog() {
         // get prompts.xml view
@@ -131,32 +208,6 @@ public class MainActivity extends AppCompatActivity{
         // create an alert dialog
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
-    }
-
-    private boolean canAccessCamera() {
-        return (hasPermission(Manifest.permission.CAMERA));
-    }
-
-    private boolean hasPermission(String perm) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return (PackageManager.PERMISSION_GRANTED == checkSelfPermission(perm));
-        }
-        return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle(tittleDialog)
-                .setMessage(bodyDialog)
-                .setPositiveButton(buttonDialog, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent surveyIntent = new Intent(MainActivity.this, SurveyActivity.class);
-                        startActivity(surveyIntent);
-                    }
-                }).show();
     }
 
 
