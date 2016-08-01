@@ -3,6 +3,7 @@ package nisum.com.parispilot;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -20,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
+
+    // Add Fragments to Tabs
+    private void setupViewPager(ViewPager viewPager) {
+        Adapter adapter = new Adapter(getSupportFragmentManager());
+        adapter.addFragment(new CardContentFragment(), "Card");
+        viewPager.setAdapter(adapter);
+    }
+
 
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
