@@ -47,17 +47,17 @@ public class CardContentFragment extends Fragment {
     public static class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
         // Set numbers of List in RecyclerView.
         private static final int LENGTH = 18;
-        private final String[] mPlaces;
-        private final String[] mPlaceDesc;
-        private final Drawable[] mPlacePictures;
+        private final String[] mProducts;
+        private final String[] mProductsDesc;
+        private final Drawable[] mProductsPictures;
         public ContentAdapter(Context context) {
             Resources resources = context.getResources();
-            mPlaces = resources.getStringArray(R.array.places);
-            mPlaceDesc = resources.getStringArray(R.array.place_desc);
-            TypedArray a = resources.obtainTypedArray(R.array.places_picture);
-            mPlacePictures = new Drawable[a.length()];
-            for (int i = 0; i < mPlacePictures.length; i++) {
-                mPlacePictures[i] = a.getDrawable(i);
+            mProducts = resources.getStringArray(R.array.products);
+            mProductsDesc = resources.getStringArray(R.array.products_desc);
+            TypedArray a = resources.obtainTypedArray(R.array.products_picture);
+            mProductsPictures = new Drawable[a.length()];
+            for (int i = 0; i < mProductsPictures.length; i++) {
+                mProductsPictures[i] = a.getDrawable(i);
             }
             a.recycle();
         }
@@ -69,9 +69,9 @@ public class CardContentFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.picture.setImageDrawable(mPlacePictures[position % mPlacePictures.length]);
-            holder.name.setText(mPlaces[position % mPlaces.length]);
-            holder.description.setText(mPlaceDesc[position % mPlaceDesc.length]);
+            holder.picture.setImageDrawable(mProductsPictures[position % mProductsPictures.length]);
+            holder.name.setText(mProducts[position % mProducts.length]);
+            holder.description.setText(mProductsDesc[position % mProductsDesc.length]);
         }
 
         @Override
