@@ -2,6 +2,7 @@ package nisum.com.parispilot;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -18,7 +19,7 @@ import android.widget.TextView;
 /**
  * Provides UI for the view with Tiles.
  */
-public class TileContentFragment extends Fragment {
+public class TileContentFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class TileContentFragment extends Fragment {
     /**
      * Adapter to display recycler view.
      */
-    public static class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
+    public class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
         // Set numbers of List in RecyclerView.
         private static final int LENGTH = 18;
         private final String[] mPlaces;
@@ -68,14 +69,24 @@ public class TileContentFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
+        public void onBindViewHolder(ViewHolder holder, final int position) {
             holder.picture.setImageDrawable(mPlacePictures[position % mPlacePictures.length]);
             holder.name.setText(mPlaces[position % mPlaces.length]);
+            holder.picture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(view.getContext(), DetailsActivity.class);
+                    i.putExtra("product",position);
+                    startActivity(i);
+                }
+            });
         }
 
         @Override
         public int getItemCount() {
             return LENGTH;
         }
+
+
     }
 }
