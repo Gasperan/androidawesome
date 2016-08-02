@@ -19,6 +19,8 @@ import java.util.Map;
 public class DetailsActivity extends AppCompatActivity {
 
     private ImageView mainImage;
+    private String title;
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,29 +28,33 @@ public class DetailsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_details);
         mainImage = (ImageView) findViewById(R.id.main_image);
+        position = getElementPosition(savedInstanceState);
 
         Resources resources = getApplicationContext().getResources();
         TypedArray a = resources.obtainTypedArray(R.array.products_picture);
-        //mPlacePictures = new Drawable[a.length()];
-
-        int position = getElementPosition(savedInstanceState);
-
+        title = resources.getStringArray(R.array.products)[position];
         mainImage.setImageDrawable(a.getDrawable(position));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle(title);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "producto agregado al carrito", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                clickFab(view);
             }
         });
+    }
+
+    private void clickFab(View view){
+        Snackbar.make(view, "producto agregado al carrito", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
     }
 
     @Override
