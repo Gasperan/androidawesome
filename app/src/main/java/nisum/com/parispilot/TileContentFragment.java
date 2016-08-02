@@ -2,6 +2,7 @@ package nisum.com.parispilot;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -37,27 +38,30 @@ public class TileContentFragment extends Fragment {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView picture;
         public TextView name;
+
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.item_tile, parent, false));
             picture = (ImageView) itemView.findViewById(R.id.tile_picture);
             name = (TextView) itemView.findViewById(R.id.tile_title);
         }
     }
+
     /**
      * Adapter to display recycler view.
      */
-    public static class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
+    public class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
         // Set numbers of List in RecyclerView.
         private static final int LENGTH = 18;
-        private final String[] mPlaces;
-        private final Drawable[] mPlacePictures;
+        private final String[] mProducts;
+        private final Drawable[] mProductsPictures;
+
         public ContentAdapter(Context context) {
             Resources resources = context.getResources();
-            mPlaces = resources.getStringArray(R.array.products);
+            mProducts = resources.getStringArray(R.array.products);
             TypedArray a = resources.obtainTypedArray(R.array.products_picture);
-            mPlacePictures = new Drawable[a.length()];
-            for (int i = 0; i < mPlacePictures.length; i++) {
-                mPlacePictures[i] = a.getDrawable(i);
+            mProductsPictures = new Drawable[a.length()];
+            for (int i = 0; i < mProductsPictures.length; i++) {
+                mProductsPictures[i] = a.getDrawable(i);
             }
             a.recycle();
         }
@@ -68,14 +72,24 @@ public class TileContentFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.picture.setImageDrawable(mPlacePictures[position % mPlacePictures.length]);
-            holder.name.setText(mPlaces[position % mPlaces.length]);
+        public void onBindViewHolder(ViewHolder holder, final int position) {
+            holder.picture.setImageDrawable(mProductsPictures[position % mProductsPictures.length]);
+            holder.name.setText(mProducts[position % mProducts.length]);
+            holder.picture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(view.getContext(), DetailsActivity.class);
+                    i.putExtra("product", position);
+                    startActivity(i);
+                }
+            });
         }
 
         @Override
         public int getItemCount() {
             return LENGTH;
         }
+
+
     }
 }
