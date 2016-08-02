@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new CardContentFragment(), "Card");
+        adapter.addFragment(new TileContentFragment(), "Tile");
         viewPager.setAdapter(adapter);
     }
 
