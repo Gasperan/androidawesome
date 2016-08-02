@@ -8,6 +8,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -47,24 +49,27 @@ public class DetailsActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
 
     private int getElementPosition(Bundle savedInstanceState) {
         Integer position;
-        //if (savedInstanceState == null) {
+        if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
                 position = null;
             } else {
                 position= extras.getInt("product");
             }
-        //} else {
-          //  position= (int) savedInstanceState.getSerializable("position");
-        //}
-
+        } else {
+           position= (int) savedInstanceState.getSerializable("position");
+        }
         return position;
     }
 
