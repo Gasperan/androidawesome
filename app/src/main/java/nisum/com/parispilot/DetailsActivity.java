@@ -2,12 +2,14 @@ package nisum.com.parispilot;
 
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -38,9 +40,11 @@ public class DetailsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle(title);
+        setTitleColor(Color.parseColor("#2B8DE1"));
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.backarrow);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
@@ -74,7 +78,7 @@ public class DetailsActivity extends AppCompatActivity {
                 position= extras.getInt("product");
             }
         } else {
-           position= (int) savedInstanceState.getSerializable("position");
+           position= (int) savedInstanceState.getSerializable("product");
         }
         return position;
     }
