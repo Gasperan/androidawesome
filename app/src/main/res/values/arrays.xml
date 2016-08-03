@@ -34,11 +34,11 @@
          <item>@drawable/f_avator</item>
      </array> -->
     <array name="products_picture">
-        <item>@drawable/a</item>
-        <item>@drawable/b</item>
-        <item>@drawable/c</item>
-        <item>@drawable/d</item>
-        <item>@drawable/e</item>
-        <item>@drawable/f</item>
+        <item>@mipmap/samsung48</item>
+        <item>@mipmap/samsungun49</item>
+        <item>@mipmap/lguh</item>
+        <item>@mipmap/iphonese</item>
+        <item>@mipmap/iphone6s</item>
+        <item>@mipmap/drone</item>
     </array>
 </resources>
