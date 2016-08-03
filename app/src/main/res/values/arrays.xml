@@ -34,8 +34,8 @@
          <item>@drawable/f_avator</item>
      </array> -->
     <array name="products_picture">
-        <item>@mipmap/samsung48</item>
-        <item>@mipmap/samsungun49</item>
+        <item>@drawable/samsung48</item>
+        <item>@drawable/samsungun49</item>
         <item>@mipmap/lguh</item>
         <item>@mipmap/iphonese</item>
         <item>@mipmap/iphone6s</item>
