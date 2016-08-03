@@ -38,11 +38,13 @@ public class TileContentFragment extends Fragment {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView picture;
         public TextView name;
+        public TextView price;
 
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.item_tile, parent, false));
             picture = (ImageView) itemView.findViewById(R.id.tile_picture);
             name = (TextView) itemView.findViewById(R.id.tile_title);
+            price = (TextView) itemView.findViewById(R.id.tile_price);
         }
     }
 
@@ -53,11 +55,13 @@ public class TileContentFragment extends Fragment {
         // Set numbers of List in RecyclerView.
         private static final int LENGTH = 18;
         private final String[] mProducts;
+        private final String[] mPrices;
         private final Drawable[] mProductsPictures;
 
         public ContentAdapter(Context context) {
             Resources resources = context.getResources();
             mProducts = resources.getStringArray(R.array.products);
+            mPrices = resources.getStringArray(R.array.products_prices);
             TypedArray a = resources.obtainTypedArray(R.array.products_picture);
             mProductsPictures = new Drawable[a.length()];
             for (int i = 0; i < mProductsPictures.length; i++) {
@@ -74,7 +78,8 @@ public class TileContentFragment extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, final int position) {
             holder.picture.setImageDrawable(mProductsPictures[position % mProductsPictures.length]);
-            holder.name.setText(mProducts[position % mProducts.length]);
+            holder.name.setText(mProducts[position % mProducts.length].substring(0,10));
+            holder.price.setText(mPrices[position %mPrices.length]);
             holder.picture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -41,8 +41,8 @@ public class DetailsActivity extends AppCompatActivity {
 
         Resources resources = getApplicationContext().getResources();
         TypedArray a = resources.obtainTypedArray(R.array.products_picture);
-        title = resources.getStringArray(R.array.products)[position];
         mainImage.setImageDrawable(a.getDrawable(position));
+        title = resources.getStringArray(R.array.products)[position];
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
