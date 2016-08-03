@@ -13,5 +13,6 @@
         deserunt mollit anim id est laborum.
     </string>
     <string name="detail_location">"bla bla bla bla"</string>
+    <string name="title_activity_details">DetailsActivity</string>
 
 </resources>

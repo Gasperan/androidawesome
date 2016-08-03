@@ -1,12 +1,14 @@
 package nisum.com.parispilot;
 
+
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +17,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Provides UI for the view with Cards.
+ * Provides UI for the view with Tiles.
  */
-public class CardContentFragment extends Fragment {
+public class TileContentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -26,34 +28,36 @@ public class CardContentFragment extends Fragment {
         ContentAdapter adapter = new ContentAdapter(recyclerView.getContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        // Set padding for Tiles
+        int tilePadding = getResources().getDimensionPixelSize(R.dimen.tile_padding);
+        recyclerView.setPadding(tilePadding, tilePadding, tilePadding, tilePadding);
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         return recyclerView;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView picture;
         public TextView name;
-        public TextView description;
+
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
-            super(inflater.inflate(R.layout.item_card, parent, false));
-            picture = (ImageView) itemView.findViewById(R.id.card_image);
-            name = (TextView) itemView.findViewById(R.id.card_title);
-            description = (TextView) itemView.findViewById(R.id.card_text);
+            super(inflater.inflate(R.layout.item_tile, parent, false));
+            picture = (ImageView) itemView.findViewById(R.id.tile_picture);
+            name = (TextView) itemView.findViewById(R.id.tile_title);
         }
     }
+
     /**
      * Adapter to display recycler view.
      */
-    public static class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
+    public class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
         // Set numbers of List in RecyclerView.
         private static final int LENGTH = 18;
         private final String[] mProducts;
-        private final String[] mProductsDesc;
         private final Drawable[] mProductsPictures;
+
         public ContentAdapter(Context context) {
             Resources resources = context.getResources();
             mProducts = resources.getStringArray(R.array.products);
-            mProductsDesc = resources.getStringArray(R.array.products_desc);
             TypedArray a = resources.obtainTypedArray(R.array.products_picture);
             mProductsPictures = new Drawable[a.length()];
             for (int i = 0; i < mProductsPictures.length; i++) {
@@ -68,15 +72,24 @@ public class CardContentFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
+        public void onBindViewHolder(ViewHolder holder, final int position) {
             holder.picture.setImageDrawable(mProductsPictures[position % mProductsPictures.length]);
             holder.name.setText(mProducts[position % mProducts.length]);
-            holder.description.setText(mProductsDesc[position % mProductsDesc.length]);
+            holder.picture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(view.getContext(), DetailsActivity.class);
+                    i.putExtra("product", position);
+                    startActivity(i);
+                }
+            });
         }
 
         @Override
         public int getItemCount() {
             return LENGTH;
         }
+
+
     }
 }
