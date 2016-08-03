@@ -2,10 +2,13 @@ package nisum.com.parispilot.adapters;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -38,14 +41,13 @@ public class ListItemViewAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.shop_bag_view,null);
 
         }
+        TypedArray a = parent.getContext().getResources().obtainTypedArray(R.array.products_picture);
         String product = parent.getContext().getResources().getStringArray(R.array.products)[data];
-        String description = parent.getContext().getResources().getStringArray(R.array.products_desc)[data];
-        String details = parent.getContext().getResources().getStringArray(R.array.products_details)[data];
-        ((TextView)convertView.findViewById(R.id.dateValue)).setText(product);
-        ((TextView)convertView.findViewById(R.id.maxValue)).setText(description);
-        ((TextView)convertView.findViewById(R.id.humidityValue)).setText(details);
-        ((TextView)convertView.findViewById(R.id.minValue)).setText(product);
-        ((TextView)convertView.findViewById(R.id.windValue)).setText(details);
+        String image = parent.getContext().getResources().getStringArray(R.array.products_picture)[data];
+        ((TextView)convertView.findViewById(R.id.productName)).setText(product);
+        ((ImageView)convertView.findViewById(R.id.productImage)).setImageDrawable(a.getDrawable(position));
+
+
 
         return convertView;
 
@@ -53,16 +55,17 @@ public class ListItemViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return mDataList.size();
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public Object getItem(int position) {
+        return mDataList.get(position);
     }
 
     @Override
-    public long getItemId(int i) {
-        return 0;
+    public long getItemId(int position) {
+        return position;
     }
+
 }
