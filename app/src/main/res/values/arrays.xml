@@ -1,80 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="products">
-        <item>iphone 6</item>
-        <item>Guitarras Gibson</item>
-        <item>Manhattan</item>
-        <item>iphone 6</item>
-        <item>Guitarras Gibson</item>
-        <item>Manhattan</item>
+        <item>LED 48" Samsung UN48JU6000GXZS Smart TV Ultra HD</item>
+        <item>LED 49" Samsung UN49KU6500 Smart TV UltraHD 4K Curvo</item>
+        <item>LED 49" LG UH6100 Smart TV UltraHD 4K</item>
+        <item>Iphone SE 16GB Plateado Liberado</item>
+        <item>Iphone 6S Silver 16 GB Liberado</item>
+        <item>Drone Hubsan H107C+</item>
     </string-array>
     <string-array name="products_desc">
-        <item>El iphone es el celular mas avanzado del mundo....</item>
-        <item>Las guitarras gibson son unicas en su clase.</item>
-        <item>Samsung ha redefinido sus telefonos inteligentes</item>
-        <item>Ropa de temporada al mejor precio</item>
-        <item>Los macboks pro son los mejores en su tipo, tendras un gran equipo si logras hacerte de uno</item>
-        <item>Mesas clasicas para todos los gustos.</item>
+        <item>Tipo de Pantalla: Led/nPulgadas: 48"/nResolución: Ultra HD 3840 x 2160/nSmart TV: Sí/nPuertos HDMI: 3/nPuertos USB: 2/nDimensiones: 1087.1 x 700.5 x 277.8 mm/nTasa de Refresco: 60/nSintonizador Digital: Si/nGarantia: 1 Año</item>
+        <item>"Tipo de Pantalla: LED/nPulgadas: 49""/nResolución: Ultra HD 3840x2160/nSmart TV: Sí/nPuertos HDMI: 3/nPuertos USB: 2/nTasa de Refresco: 120 Hz/nSintonizador Digital: Si ISDB-T/nGarantía: 1 Año"</item>
+        <item>"Tipo de Pantalla: LED/nPulgadas: 49""/nResolución: Ultra HD 3840x2160/nSmart TV: Sí/nPuertos HDMI: 3/nPuertos USB: 1/nTasa de Refresco: 120 Hz/nSintonizador Digital: Si/nGarantía: 1 Año "</item>
+        <item>"Presentamos el iPhone SE, el teléfono de 4 pulgadas más potente hasta la fecha. Para crearlo, partimos de un diseño que es todo un éxito y lo reinventamos de arriba abajo. El avanzado chip A9 es el mismo que lleva el iPhone 6s. La cámara de 12 megapíxeles hace unas fotos increíbles y graba vídeos en 4K espectaculares. Y con Live Photos, tus recuerdos están más vivos que nunca./nEl resultado es un iPhone pequeño, pero que está a la altura de los grandes."</item>
+        <item>"Con los nuevos 3D Touch, Live Photos, materiales más resistentes, cámaras avanzadas y mucho más, verás cómo con el iPhone 6s sólo una cosa cambió:/n/ntodo!/nPantalla Retina HD de 5,5 pulgadas con 3d Touch. Fabricado con aluminio 7000 Series y cubierta de vidrio más resistente. Chip A9 con arquitectura de 64 bits al estilo de los equipos de escritorio. Nueva cámara iSight de 12 MP con Live Photos y estabilización óptica de imagen para fotos y videos. Touch ID mejorado. Tecnologías LTE y Wi-Fi más rápidas. Batería de larga duración. iOS 9 y iCloud. Todo en un diseño unibody fluido y continuo."</item>
+        <item>"Motor (x4): 0820 corless motors./nFrecuencia 2.4GHz./nCon 4 Canales/nFuncion de mantener altura, facil de aprender./nCamara: camara incluyeModulo de grabacion de video y fotografia./nResolucion: 1280x720./nVoltaje bateria: 3.7V./nCapacidad: 530mAh./nTiempo de vuelo: alrededor de 7 minutos./nDistancia Control: 50- 150 metros./nLatest 6-axis flight control system with adjustable gyro sensitivity./nPermite vuelo super estable./nCarroceria ligera con alta durabilidad./nEs posible recargar la bateria en el PC./nTarjeta de memoria: Micro SD card no incluida/n4 bases de goma y LED luces."</item>
     </string-array>
-    <string-array name="products_details">
-        <item>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
-        </item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
-        </item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
-        </item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
-        </item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
-        </item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
-        </item>
+    <string-array name="products_prices">
+        <item>$399.99</item>
+        <item>$579.99</item>
+        <item>$399.99</item>
+        <item>$399.99</item>
+        <item>$649.99</item>
+        <item>$79.99</item>
     </string-array>
 
-   <!-- <array name="products_avator">
-        <item>@drawable/a_avator</item>
-        <item>@drawable/b_avator</item>
-        <item>@drawable/c_avator</item>
-        <item>@drawable/d_avator</item>
-        <item>@drawable/e_avator</item>
-        <item>@drawable/f_avator</item>
-    </array> -->
+    <!-- <array name="products_avator">
+         <item>@drawable/a_avator</item>
+         <item>@drawable/b_avator</item>
+         <item>@drawable/c_avator</item>
+         <item>@drawable/d_avator</item>
+         <item>@drawable/e_avator</item>
+         <item>@drawable/f_avator</item>
+     </array> -->
     <array name="products_picture">
-        <item>@drawable/a</item>
-        <item>@drawable/b</item>
-        <item>@drawable/c</item>
-        <item>@drawable/d</item>
-        <item>@drawable/e</item>
-        <item>@drawable/f</item>
+        <item>@drawable/samsung48</item>
+        <item>@drawable/samsungun49</item>
+        <item>@mipmap/lguh</item>
+        <item>@mipmap/iphonese</item>
+        <item>@mipmap/iphone6s</item>
+        <item>@mipmap/drone</item>
     </array>
 </resources>
