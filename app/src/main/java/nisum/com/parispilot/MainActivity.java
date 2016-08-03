@@ -1,5 +1,6 @@
 package nisum.com.parispilot;
 
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        setTitle("Paris Pilot");
+        setTitleColor(Color.parseColor("#2B8DE1"));
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
     }

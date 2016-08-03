@@ -9,8 +9,6 @@
         <item name="colorPrimaryDark">#1e88e5</item>
         <!-- Dark Indigo -->
         <item name="colorAccent">#00B0FF</item>
-        <!-- Blue -->
-        <item name="android:textColorPrimary">#ffffff</item>
     </style>
 
     <style name="AppTheme" parent="AppTheme.Base"></style>
