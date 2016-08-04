@@ -53,7 +53,6 @@ public class TileContentFragment extends Fragment {
      */
     public class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
         // Set numbers of List in RecyclerView.
-        private static final int LENGTH = 18;
         private final String[] mProducts;
         private final String[] mPrices;
         private final Drawable[] mProductsPictures;
@@ -92,7 +91,7 @@ public class TileContentFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            return LENGTH;
+            return mProducts.length;
         }
 
 
