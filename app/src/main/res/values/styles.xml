@@ -37,8 +37,8 @@
     </style>
 
     <style name="CustomShowcaseTheme3" parent="ShowcaseView.Light">
-        <item name="sv_backgroundColor">#c103a9f4</item>
-        <item name="sv_showcaseColor">@color/background</item>
+        <item name="sv_backgroundColor">#B403a9f4</item>
+        <item name="sv_showcaseColor">#c103a9f4</item>
         <item name="sv_buttonText">OK</item>
         <item name="sv_tintButtonColor">false</item>
         <item name="sv_titleTextAppearance">@style/CustomTitle2</item>
