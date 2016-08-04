@@ -10,6 +10,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -117,31 +118,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void showShowcaseList(){
-
-        Target targetList = new ViewTarget(R.id.viewpager, this);
+    private void presentShowcaseList(int withDelay){
 
 
-        new ShowcaseView.Builder(this)
-                .setTarget(targetList)
-                .setStyle(R.style.CustomShowcaseTheme2)
-                .setContentTitle("Lista de productos")
-                .setContentText("Seleccione un producto para ver su detalle")
-                .hideOnTouchOutside()
-                .build();
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Target targetList = new ViewTarget(R.id.viewpager, MainActivity.this);
+
+                new ShowcaseView.Builder(MainActivity.this)
+                        .setTarget(targetList)
+                        .setStyle(R.style.CustomShowcaseTheme3)
+                        .setContentTitle("Lista de productos")
+                        .setContentText("Seleccione un producto para ver su detalle")
+                        .hideOnTouchOutside()
+                        .build();
+            }
+        }, withDelay);
 
 
-        /*
-        new ShowcaseView.Builder(this)
-                .setTarget(targetList)
-                .setContentTitle("Lista de productos")
-                .setContentText("Seleccione un producto para ver su detalle")
-                .setShowcaseDrawer(new CustomShowcaseView(getResources()))
-                .build();
-        */
     }
 
-    private void presentShowcaseView(int withDelay) {
+    private void presentShowcaseView() {
 
 
         Target viewTarget = new Target() {
@@ -154,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         final ShowcaseView showcaseView;
         showcaseView = new ShowcaseView.Builder(this)
                 .setTarget(viewTarget)
-                .setStyle(R.style.CustomShowcaseTheme2)
+                .setStyle(R.style.CustomShowcaseTheme3)
                 .setContentTitle("Acciones en la barra")
                 .setContentText("Acceda a su carro de compras")
                 .build();
@@ -164,41 +163,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showcaseView.hide();
-                showShowcaseList();
+                presentShowcaseList(1000);
             }
         });
-
-
-
-        /*
-        ShowcaseConfig config = new ShowcaseConfig();
-        config.setDelay(withDelay);
-
-        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(this);
-        sequence.setConfig(config);
-
-        AppBarLayout appBarLayout = (AppBarLayout)findViewById(R.id.appbar);
-        sequence.addSequenceItem(appBarLayout, "Toolbar titulo","Descripcion toolbar titulo", "OK");
-
-        ViewPager viewPager = (ViewPager)findViewById(R.id.viewpager);
-        sequence.addSequenceItem(viewPager, "ViewPager titulo","Descripcion viewPager titulo", "OK");
-
-        sequence.start();
-        */
-
-
-
-        //Queremos a esta lib de 1era iter enfocar un icono de accion de la app bar
-
-        /*
-        View view = findViewById(R.id.toolbar);
-        new MaterialShowcaseView.Builder(this)
-                .setTarget(view)
-                .setDismissText("GOT IT")
-                .setContentText("Example of how to setup a MaterialShowcaseView for menu items in action bar.")
-                .show();
-        */
-
     }
 
     @Override
@@ -206,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        presentShowcaseView(300);
+        presentShowcaseView();
         return true;
     }
 
