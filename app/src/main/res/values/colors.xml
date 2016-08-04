@@ -3,9 +3,10 @@
     <color name="colorPrimary">#2B8DE1</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
+    <color name="background">#03a9f4</color>
     <color name="white">#FFFFFF</color>
     <color name="dark_grey">#424242</color>
     <color name="medium_grey">#9E9E9E</color>
     <color name="button_grey">#757575</color>
+    <color name="custom_showcase_bg">#b9002153</color>
 </resources>

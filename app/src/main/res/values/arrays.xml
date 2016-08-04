@@ -37,7 +37,7 @@
         <item>Tipo de Pantalla: LED\nPulgadas: 49\nResolución: Ultra HD 3840x2160\nSmart TV: Sí\nPuertos HDMI: 3\nPuertos USB: 1\nTasa de Refresco: 120 Hz\nSintonizador Digital: Si\nGarantía: 1 Año </item>
         <item>Presentamos el iPhone SE, el teléfono de 4 pulgadas más potente hasta la fecha. Para crearlo, partimos de un diseño que es todo un éxito y lo reinventamos de arriba abajo. El avanzado chip A9 es el mismo que lleva el iPhone 6s. La cámara de 12 megapíxeles hace unas fotos increíbles y graba vídeos en 4K espectaculares. Y con Live Photos, tus recuerdos están más vivos que nunca.\nEl resultado es un iPhone pequeño, pero que está a la altura de los grandes.</item>
         <item>Con los nuevos 3D Touch, Live Photos, materiales más resistentes, cámaras avanzadas y mucho más, verás cómo con el iPhone 6s sólo una cosa cambió:\n\ntodo!\nPantalla Retina HD de 5,5 pulgadas con 3d Touch. Fabricado con aluminio 7000 Series y cubierta de vidrio más resistente. Chip A9 con arquitectura de 64 bits al estilo de los equipos de escritorio. Nueva cámara iSight de 12 MP con Live Photos y estabilización óptica de imagen para fotos y videos. Touch ID mejorado. Tecnologías LTE y Wi-Fi más rápidas. Batería de larga duración. iOS 9 y iCloud. Todo en un diseño unibody fluido y continuo.</item>
-        <item>Motor (x4): 0820 corless motors.\nFrecuencia 2.4GHz.\nCon 4 Canales\nFuncion de mantener altura, facil de aprender.\nCamara: camara incluyeModulo de grabacion de video y fotografia.\nResolucion: 1280x720.\nVoltaje bateria: 3.7V.\nCapacidad: 530mAh.\nTiempo de vuelo: alrededor de 7 minutos.\nDistancia Control: 50- 150 metros.\nLatest 6-axis flight control system with adjustable gyro sensitivity.\nPermite vuelo super estable.\nCarroceria ligera con alta durabilidad.\nEs posible recargar la bateria en el PC.\nTarjeta de memoria: Micro SD card no incluida\n4 bases de goma y LED luces.</item>
+        <item>Motor (x4): 0820 corless motors.\nFrecuencia 2.4GHz.\nCon 4 Canales\nFuncion de mantener altura, facil de aprender.\nCamara: camara incluyeModulo de grabacion de video y fotografia.\nResolucion: 1280x720.\nVoltaje bateria: 3.7V.\nCapacidad: 530mAh.\nTiempo de vuelo: alrededor de 7 minutos.\nDistancia Control: 50 - 150 metros.\nLatest 6-axis flight control system with adjustable gyro sensitivity.\nPermite vuelo super estable.\nCarroceria ligera con alta durabilidad.\nEs posible recargar la bateria en el PC.\nTarjeta de memoria: Micro SD card no incluida\n4 bases de goma y LED luces.</item>
         <item>El mejor lugar para jugar\nPlayStation 4 es para aquellos jugadores que quieren embarcarse en increíbles viajes por nuevos mundos y formar parte de una comunidad de juego estrechamente conectada.\n
         Con una destacada colección de juegos ya disponible, y muchos más en desarrollo, PS4 es el mejor lugar para jugar a los mejores títulos e innovadores juegos independientes.\n
         La consola más potente\n
@@ -202,9 +202,9 @@
         <item>$9.990</item>
         <item>$9.990</item>
         <item>$8.490</item>
-        <item>$34.90</item>
-        <item>$59.90</item>
-        <item>$59.90</item>
+        <item>$34.990</item>
+        <item>$59.990</item>
+        <item>$59.990</item>
         <item>$59.890</item>
         <item>$16.390</item>
     </string-array>
@@ -226,6 +226,7 @@
         <item>@drawable/drone</item>
         <item>@drawable/ps4</item>
         <item>@drawable/rackbrown</item>
+        <item>@drawable/rackluco</item>
         <item>@drawable/sofaspring</item>
         <item>@drawable/sofacuerpos</item>
         <item>@drawable/sofa3cuerpos</item>
@@ -244,6 +245,7 @@
         <item>@drawable/antiparras</item>
         <item>@drawable/lenteskomono</item>
         <item>@drawable/lenteskomonohombre</item>
+        <item>@drawable/lentesmkors</item>
         <item>@drawable/lentesespirit</item>
     </array>
 </resources>
