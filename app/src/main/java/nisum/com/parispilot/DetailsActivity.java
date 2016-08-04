@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +25,8 @@ public class DetailsActivity extends AppCompatActivity {
     private ImageView mainImage;
     private String title;
     int position;
+    private TextView price;
+    private TextView description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +36,16 @@ public class DetailsActivity extends AppCompatActivity {
 
         mainImage = (ImageView) findViewById(R.id.main_image);
         position = getElementPosition(savedInstanceState);
+        price = (TextView) findViewById(R.id.title);
+        description = (TextView) findViewById(R.id.descripcion);
 
         Resources resources = getApplicationContext().getResources();
         TypedArray a = resources.obtainTypedArray(R.array.products_picture);
         title = resources.getStringArray(R.array.products)[position];
         mainImage.setImageDrawable(a.getDrawable(position));
+        price.setText(resources.getStringArray(R.array.products_prices)[position]);
+        String myDescription = resources.getStringArray(R.array.products_desc)[position];
+        description.setText(myDescription);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
