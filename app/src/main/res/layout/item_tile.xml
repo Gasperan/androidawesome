@@ -12,21 +12,38 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/tile_height"
         android:scaleType="centerCrop"
-        tools:src="@drawable/a" />
+        tools:src="@drawable/iphone6s" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/tile_height"
-        android:alpha="0.3"
+        android:alpha="0.1"
         android:background="@color/dark_grey" />
 
-    <TextView
-        android:id="@+id/tile_title"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/tile_height"
-        android:layout_gravity="center"
-        android:gravity="center"
-        tools:text="@string/item_title"
-        android:textColor="@color/white"
-        android:textSize="@dimen/article_titles" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tile_picture">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sfdsds"
+            android:id="@+id/tile_title"
+            android:textSize="@dimen/article_titles"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:textStyle="bold"
+            android:id="@+id/tile_price"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
 </RelativeLayout>
