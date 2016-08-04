@@ -1,5 +1,7 @@
 package nisum.com.parispilot;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -18,9 +20,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class DetailsActivity extends AppCompatActivity {
+
+    private static final String PREFS_FILE = "com.nisum.parispilot.preferences";
+    private static final String SHOPPING_CART = "shopping_cart";
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
 
     private ImageView mainImage;
     private String title;
@@ -67,8 +77,25 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void clickFab(View view){
-        Snackbar.make(view, "producto agregado al carrito", Snackbar.LENGTH_LONG)
+        mSharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
+        mEditor = mSharedPreferences.edit();
+        Set<String> set = mSharedPreferences.getStringSet(SHOPPING_CART,null);
+
+        if (set == null) {
+            set = new HashSet<String>();
+        }
+
+        set.add(position+"");
+        mEditor.putStringSet(SHOPPING_CART, set);
+        mEditor.apply();
+        Snackbar.make(view, "producto agregado al carrito", Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show();
+
+        //test sharedpreferences
+        mSharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
+        mEditor = mSharedPreferences.edit();
+        Set<String> set1 = mSharedPreferences.getStringSet(SHOPPING_CART,null);
+        System.out.println("shared_preferences: " + set1);
     }
 
     @Override
