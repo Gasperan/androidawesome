@@ -17,5 +17,6 @@
     <string name="button_checkout">Finalizar Compra</string>
     <string name="shipping_text">envío gratis</string>
     <string name="url_survey">https://docs.google.com/forms/d/e/1FAIpQLSd87oYtsffxX4LBqCo1kF6UhZAlZAVclsyFMmrSk4BGtyiO5Q/viewform</string>
+    <string name="no_checkout">Actualmente la función “Finalizar compra” no está disponible.</string>
 
 </resources>
