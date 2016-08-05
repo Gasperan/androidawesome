@@ -6,24 +6,27 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+import android.graphics.Point;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.HashMap;
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.Target;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
+
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -32,7 +35,8 @@ public class DetailsActivity extends AppCompatActivity {
     private static final String SHOPPING_CART = "shopping_cart";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
-
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     private ImageView mainImage;
     private String title;
@@ -76,6 +80,52 @@ public class DetailsActivity extends AppCompatActivity {
                 clickFab(view);
             }
         });
+
+        sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+
+        if (!sharedPreferences.getBoolean("showcaseLoaded", false)) {
+            editor = sharedPreferences.edit();
+            editor.putBoolean("showcaseLoaded", true);
+            editor.commit();
+            presentShowcaseAddProduct();
+        }
+
+
+    }
+
+    private void presentShowcaseAddProduct() {
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                Target viewTarget = new Target() {
+                    @Override
+                    public Point getPoint() {
+                        return new ViewTarget(findViewById(R.id.fab)).getPoint();
+                    }
+                };
+
+                RelativeLayout.LayoutParams lps = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                // This aligns button to the bottom left side of screen
+                lps.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                lps.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+                // Set margins to the button, we add 16dp margins here
+                int margin = ((Number) (getResources().getDisplayMetrics().density * 16)).intValue();
+                lps.setMargins(margin, margin, margin, margin);
+
+                final ShowcaseView showcaseView;
+                showcaseView = new ShowcaseView.Builder(DetailsActivity.this)
+                        .setTarget(viewTarget)
+                        .setStyle(R.style.CustomShowcaseTheme3)
+                        .setContentTitle("Agregar un producto")
+                        .setContentText("Ingrese este producto a su carro de compras")
+                        .build();
+                showcaseView.setButtonPosition(lps);
+
+            }
+        }, 1000);
     }
 
     @Override

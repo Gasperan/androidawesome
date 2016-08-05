@@ -3,14 +3,7 @@ package nisum.com.parispilot;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -23,8 +16,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
-import com.github.amlcurran.showcaseview.ShowcaseDrawer;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
@@ -68,13 +61,27 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 Target targetList = new ViewTarget(R.id.viewpager, MainActivity.this);
 
-                new ShowcaseView.Builder(MainActivity.this)
+                final ShowcaseView showcaseView;
+
+                showcaseView = new ShowcaseView.Builder(MainActivity.this)
                         .setTarget(targetList)
                         .setStyle(R.style.CustomShowcaseTheme3)
                         .setContentTitle("Lista de productos")
                         .setContentText("Seleccione un producto para ver su detalle")
                         .hideOnTouchOutside()
                         .build();
+
+                showcaseView.overrideButtonClick(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+                        showcaseView.hide();
+                        //presentShowcaseList(1000);
+                        Toast.makeText(MainActivity.this,"Ahora cambiar a activity DetailsActivity",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
             }
         }, withDelay);
     }
@@ -112,8 +119,6 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu, menu);
 
         if (!sharedPreferences.getBoolean("showcaseLoaded", false)) {
-            editor.putBoolean("showcaseLoaded", true);
-            editor.commit();
             presentShowcaseView();
         }
 
