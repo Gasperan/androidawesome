@@ -85,7 +85,6 @@ public class DetailsActivity extends AppCompatActivity {
         if (id == R.id.action_refresh) {
             Intent i= new Intent(DetailsActivity.this,ShoppingBagActivity.class);
             startActivity(i);
-            finish();
             return true;
         }
 
