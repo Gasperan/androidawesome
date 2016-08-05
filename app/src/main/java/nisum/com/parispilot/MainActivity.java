@@ -137,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
         Adapter adapter = new Adapter(getSupportFragmentManager());
         adapter.addFragment(new TileContentFragment(), "Tile");
         viewPager.setAdapter(adapter);
-
     }
 
     static class Adapter extends FragmentPagerAdapter {
@@ -169,4 +168,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        SurveyHandler.handleSurvey(this);
+    }
 }

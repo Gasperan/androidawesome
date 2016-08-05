@@ -99,4 +99,10 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
         finish();
         return true;
     }
+
+
+    @Override
+    public void onBackPressed() {
+        SurveyHandler.handleSurvey(this);
+    }
 }

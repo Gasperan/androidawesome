@@ -141,4 +141,8 @@ public class DetailsActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        SurveyHandler.handleSurvey(this);
+    }
 }
