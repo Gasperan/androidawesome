@@ -83,7 +83,7 @@ public class TileContentFragment extends Fragment {
             holder.picture.setImageDrawable(mProductsPictures[position % mProductsPictures.length]);
             String myText = mProducts[position % mProducts.length].substring(0,13);
             holder.name.setText(myText+"...");
-            holder.price.setText(mPrices[position %mPrices.length]);
+            holder.price.setText("$" + mPrices[position %mPrices.length]);
             holder.picture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
