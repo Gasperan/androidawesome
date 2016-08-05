@@ -63,7 +63,7 @@ public class DetailsActivity extends AppCompatActivity {
         TypedArray a = resources.obtainTypedArray(R.array.products_picture);
         title = resources.getStringArray(R.array.products)[position];
         mainImage.setImageDrawable(a.getDrawable(position));
-        price.setText(resources.getStringArray(R.array.products_prices)[position]);
+        price.setText("$" + resources.getStringArray(R.array.products_prices)[position]);
         String myDescription = resources.getStringArray(R.array.products_desc)[position];
         description.setText(myDescription);
 
