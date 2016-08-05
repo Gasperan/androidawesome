@@ -28,7 +28,7 @@ import nisum.com.parispilot.models.Item;
  */
 public class ListItemViewAdapter extends BaseAdapter {
     private static final String[] daysOfWeek = {"1", "2", "3"};
-    private List<Integer> mDataList = new ArrayList<>();
+    private List<String> mDataList = new ArrayList<>();
     private LayoutInflater mInflater;
     public TextView subTotal;
     private OnItemClicked mListener;
@@ -42,13 +42,13 @@ public class ListItemViewAdapter extends BaseAdapter {
         mInflater = LayoutInflater.from(cxt);
     }
 
-    public void setData(List<Integer> dataList){
+    public void setData(List<String> dataList){
         this.mDataList = dataList;
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        int data = mDataList.get(position);
+        int data = new Integer(mDataList.get(position));
 
         if(convertView == null){
             convertView = mInflater.inflate(R.layout.shop_bag_view,null);
@@ -76,8 +76,7 @@ public class ListItemViewAdapter extends BaseAdapter {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(actualPosition!=i){
-                    int total = 0;
-                    for (int i=0; i<)
+                    //for (int i=0; i<)
                     int valueSpinner = (Integer.parseInt(itemQuantity.getItemAtPosition(actualPosition).toString()));
                     int total = priceVisible * valueSpinner;
                     mListener.onClick(total);

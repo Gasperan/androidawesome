@@ -72,12 +72,17 @@ public class TileContentFragment extends Fragment {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             return new ViewHolder(LayoutInflater.from(parent.getContext()), parent);
+
+
+
+
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, final int position) {
             holder.picture.setImageDrawable(mProductsPictures[position % mProductsPictures.length]);
-            holder.name.setText(mProducts[position % mProducts.length].substring(0,10));
+            String myText = mProducts[position % mProducts.length].substring(0,13);
+            holder.name.setText(myText+"...");
             holder.price.setText(mPrices[position %mPrices.length]);
             holder.picture.setOnClickListener(new View.OnClickListener() {
                 @Override
