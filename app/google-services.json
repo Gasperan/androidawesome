@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "49395536394",
+    "project_id": "shopinlist-app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49395536394:android:d37bb62909acb092",
+        "android_client_info": {
+          "package_name": "nisum.com.parispilot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChLgGM2kXvXxa8pCY6nuilDU_gJFDgXxo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-39658901-4"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

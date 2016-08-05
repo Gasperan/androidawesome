@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
+        TrackerHelper.initTracker(getApplication());
+
         sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
 
         if (!sharedPreferences.getBoolean("showcaseLoaded", false)) {
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void presentShowcaseList(int withDelay) {
         final Handler handler = new Handler();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -84,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }, withDelay);
+        //Tracker
+        TrackerHelper.sendEvent("ShowCase", "mostrado showcase de lista");
     }
 
     private void presentShowcaseView() {
@@ -110,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
                 presentShowcaseList(1000);
             }
         });
+        //Tracker
+        TrackerHelper.sendEvent("ShowCase", "mostrado showcase de barra");
     }
 
     @Override
@@ -135,6 +142,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        //Tracker
+        TrackerHelper.sendEvent("MenuItem", "seleccionado item " + id);
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -142,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
         Adapter adapter = new Adapter(getSupportFragmentManager());
         adapter.addFragment(new TileContentFragment(), "Tile");
         viewPager.setAdapter(adapter);
-
     }
 
     static class Adapter extends FragmentPagerAdapter {
@@ -174,4 +183,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        SurveyHandler.handleSurvey(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        TrackerHelper.nameScreen(this);
+    }
 }

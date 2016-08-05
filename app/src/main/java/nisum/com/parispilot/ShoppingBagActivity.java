@@ -36,6 +36,8 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
         setContentView(R.layout.activity_shopping_bag);
         t = (TextView) findViewById(R.id.totalEdit);
 
+        TrackerHelper.initTracker(getApplication());
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Shopping Cart");
@@ -98,5 +100,17 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
     public boolean onSupportNavigateUp(){
         finish();
         return true;
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        SurveyHandler.handleSurvey(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        TrackerHelper.nameScreen(this);
     }
 }

@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="iphone 6s apple ca."
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="2dp"
         android:id="@+id/productName"
         android:layout_marginTop="38dp"
         android:layout_alignTop="@+id/productImage"
@@ -33,18 +33,16 @@
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
         android:id="@+id/productPrice"
-        android:layout_marginRight="23dp"
-        android:layout_marginEnd="23dp"
-        android:layout_alignTop="@+id/productName"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/imageView3"
+        android:layout_toStartOf="@+id/imageView3" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/itemQuantity"
-
-        android:layout_below="@+id/deleteIcon"
+        android:layout_below="@+id/productName"
         android:layout_alignLeft="@+id/productName"
         android:layout_alignStart="@+id/productName" />
 
@@ -55,6 +53,17 @@
         android:layout_below="@+id/productPrice"
         android:layout_alignLeft="@+id/productPrice"
         android:layout_alignStart="@+id/productPrice" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@drawable/deleteitem"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp" />
 
 
 </RelativeLayout>
