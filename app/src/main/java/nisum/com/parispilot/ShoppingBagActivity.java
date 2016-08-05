@@ -12,8 +12,10 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.InputQueue;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.os.Handler;
 import android.widget.TextView;
@@ -159,4 +161,5 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
         }
         return total;
     }
+
 }
