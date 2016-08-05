@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -43,6 +44,7 @@ public class DetailsActivity extends AppCompatActivity {
     int position;
     private TextView price;
     private TextView description;
+    private Button botonCarrito;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +76,9 @@ public class DetailsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.backarrow);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        botonCarrito = (Button) findViewById(R.id.button);
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        botonCarrito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 clickFab(view);
@@ -97,6 +99,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     private void presentShowcaseAddProduct() {
 
+        /*
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -105,7 +108,7 @@ public class DetailsActivity extends AppCompatActivity {
                 Target viewTarget = new Target() {
                     @Override
                     public Point getPoint() {
-                        return new ViewTarget(findViewById(R.id.fab)).getPoint();
+                       // return new ViewTarget(findViewById(R.id.fab)).getPoint();
                     }
                 };
 
@@ -127,7 +130,7 @@ public class DetailsActivity extends AppCompatActivity {
                 showcaseView.setButtonPosition(lps);
 
             }
-        }, 1000);
+        }, 1000);*/
     }
 
     @Override
