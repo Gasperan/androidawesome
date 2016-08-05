@@ -8,7 +8,8 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/productImage" />
+        android:id="@+id/productImage"
+        android:layout_marginLeft="25dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/producPrice"
+        android:id="@+id/productPrice"
         android:layout_alignBottom="@+id/productName"
         android:layout_toRightOf="@+id/productName"
         android:layout_toEndOf="@+id/productName"
@@ -36,7 +37,7 @@
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ItemQuantity"
+        android:id="@+id/itemQuantity"
         android:layout_below="@+id/productName"
         android:layout_alignLeft="@+id/productName"
         android:layout_alignStart="@+id/productName" />
@@ -45,7 +46,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/deleteIcon"
-        android:layout_below="@+id/producPrice"
-        android:layout_alignLeft="@+id/producPrice"
-        android:layout_alignStart="@+id/producPrice" />
+        android:layout_below="@+id/productPrice"
+        android:layout_alignLeft="@+id/productPrice"
+        android:layout_alignStart="@+id/productPrice" />
+
+
 </RelativeLayout>

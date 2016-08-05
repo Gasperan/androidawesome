@@ -17,12 +17,12 @@
         <item>"Motor (x4): 0820 corless motors./nFrecuencia 2.4GHz./nCon 4 Canales/nFuncion de mantener altura, facil de aprender./nCamara: camara incluyeModulo de grabacion de video y fotografia./nResolucion: 1280x720./nVoltaje bateria: 3.7V./nCapacidad: 530mAh./nTiempo de vuelo: alrededor de 7 minutos./nDistancia Control: 50- 150 metros./nLatest 6-axis flight control system with adjustable gyro sensitivity./nPermite vuelo super estable./nCarroceria ligera con alta durabilidad./nEs posible recargar la bateria en el PC./nTarjeta de memoria: Micro SD card no incluida/n4 bases de goma y LED luces."</item>
     </string-array>
     <string-array name="products_prices">
-        <item>$399.99</item>
-        <item>$579.99</item>
-        <item>$399.99</item>
-        <item>$399.99</item>
-        <item>$649.99</item>
-        <item>$79.99</item>
+        <item>399</item>
+        <item>579</item>
+        <item>399</item>
+        <item>399</item>
+        <item>649</item>
+        <item>79</item>
     </string-array>
 
     <!-- <array name="products_avator">
@@ -35,10 +35,15 @@
      </array> -->
     <array name="products_picture">
         <item>@drawable/samsung48</item>
-        <item>@drawable/samsungun49</item>
-        <item>@mipmap/lguh</item>
-        <item>@mipmap/iphonese</item>
-        <item>@mipmap/iphone6s</item>
-        <item>@mipmap/drone</item>
+        <item>@drawable/samsung49</item>
+        <item>@drawable/lguh</item>
+        <item>@drawable/iphonese</item>
+        <item>@drawable/iphone6s</item>
+        <item>@drawable/drone</item>
+    </array>
+    <array name="quantity_stock">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </array>
 </resources>
