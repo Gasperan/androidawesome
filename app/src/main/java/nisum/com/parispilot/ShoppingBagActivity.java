@@ -19,6 +19,7 @@ import android.os.Handler;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -72,7 +73,6 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
                 builder.setMessage(R.string.no_checkout);
                 builder.setTitle("Opción no disponible");
                 builder.create().show();
-                Log.d("Your sister", "Que wena esta tu heramana");
             }
         });
         t.setText("$"+getTotal());
