@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 24
@@ -34,4 +35,5 @@ dependencies {
     compile 'com.android.support:support-v4:24.0.0'
     compile 'com.github.deano2390:MaterialShowcaseView:1.1.0@aar'
     compile 'com.github.amlcurran.showcaseview:library:5.4.3'
+    compile 'com.google.android.gms:play-services-analytics:7.3.0'
 }
