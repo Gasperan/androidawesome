@@ -14,7 +14,7 @@
     </string>
     <string name="detail_location">"bla bla bla bla"</string>
     <string name="title_activity_details">DetailsActivity</string>
-    <string name="button_checkout">Checkout</string>
+    <string name="button_checkout">Finalizar Compra</string>
     <string name="shipping_text">envío gratis</string>
     <string name="url_survey">https://docs.google.com/forms/d/e/1FAIpQLSd87oYtsffxX4LBqCo1kF6UhZAlZAVclsyFMmrSk4BGtyiO5Q/viewform</string>
 

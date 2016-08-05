@@ -35,8 +35,8 @@
         android:id="@+id/productPrice"
         android:layout_centerVertical="true"
         android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/imageView3"
-        android:layout_toStartOf="@+id/imageView3" />
+        android:layout_toLeftOf="@+id/delete"
+        android:layout_toStartOf="@+id/delete" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -44,7 +44,8 @@
         android:id="@+id/itemQuantity"
         android:layout_below="@+id/productName"
         android:layout_alignLeft="@+id/productName"
-        android:layout_alignStart="@+id/productName" />
+        android:layout_alignStart="@+id/productName"
+        android:visibility="gone" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -57,7 +58,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
+        android:id="@+id/delete"
         android:src="@drawable/deleteitem"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
