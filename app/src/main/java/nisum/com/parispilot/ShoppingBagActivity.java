@@ -3,9 +3,11 @@ package nisum.com.parispilot;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.InputQueue;
 import android.widget.ListView;
 import android.os.Handler;
@@ -33,6 +35,15 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_bag);
         t = (TextView) findViewById(R.id.totalEdit);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Shopping Cart");
+        setTitleColor(Color.parseColor("#2B8DE1"));
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.backarrow);
 
         mSharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
         mEditor = mSharedPreferences.edit();
@@ -77,5 +88,12 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
     public void onClick(int price) {
         System.out.println("pico");
         t.setText(price+"");
+    }
+
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 }

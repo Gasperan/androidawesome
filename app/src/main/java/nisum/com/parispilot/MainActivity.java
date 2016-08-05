@@ -134,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_refresh) {
             Intent i= new Intent(MainActivity.this,ShoppingBagActivity.class);
             startActivity(i);
-            finish();
             return true;
         }
 
