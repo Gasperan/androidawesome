@@ -177,10 +177,13 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
         adapter.addFragment(new TileContentFragment(), "Tile");
         viewPager.setAdapter(adapter);
+
     }
 
 
