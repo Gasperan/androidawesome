@@ -10,7 +10,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
     private static boolean splashLoaded = false;
-    private final int splashSeconds = 3000;
+    private final int splashSeconds = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
 
-        if(!sharedPreferences.getBoolean("showcaseLoaded",false)) {
+        if (!sharedPreferences.getBoolean("showcaseLoaded", false)) {
             editor = sharedPreferences.edit();
             editor.putBoolean("showcaseLoaded", false);
             editor.commit();
@@ -62,9 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void presentShowcaseList(int withDelay){
-
-
+    private void presentShowcaseList(int withDelay) {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -80,13 +77,9 @@ public class MainActivity extends AppCompatActivity {
                         .build();
             }
         }, withDelay);
-
-
     }
 
     private void presentShowcaseView() {
-
-
         Target viewTarget = new Target() {
             @Override
             public Point getPoint() {
@@ -118,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
 
-        if(!sharedPreferences.getBoolean("showcaseLoaded",false)){
-            editor.putBoolean("showcaseLoaded",true);
+        if (!sharedPreferences.getBoolean("showcaseLoaded", false)) {
+            editor.putBoolean("showcaseLoaded", true);
             editor.commit();
             presentShowcaseView();
         }
@@ -132,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_refresh) {
-            Intent i= new Intent(MainActivity.this,ShoppingBagActivity.class);
+            Intent i = new Intent(MainActivity.this, ShoppingBagActivity.class);
             startActivity(i);
             return true;
         }
@@ -140,15 +133,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
         adapter.addFragment(new TileContentFragment(), "Tile");
         viewPager.setAdapter(adapter);
 
     }
-
 
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();

@@ -23,9 +23,6 @@ import nisum.com.parispilot.OnItemClicked;
 import nisum.com.parispilot.R;
 import nisum.com.parispilot.models.Item;
 
-/**
- * Created by thomas on 02-08-16.
- */
 public class ListItemViewAdapter extends BaseAdapter {
     private static final String[] daysOfWeek = {"1", "2", "3"};
     private List<String> mDataList = new ArrayList<>();
@@ -62,7 +59,7 @@ public class ListItemViewAdapter extends BaseAdapter {
         String product = parent.getContext().getResources().getStringArray(R.array.products)[data];
         final int priceVisible = Integer.parseInt(parent.getContext().getResources().getStringArray(R.array.products_prices)[data]);
 
-        ((TextView)convertView.findViewById(R.id.productName)).setText(product.substring(0,20));
+        ((TextView)convertView.findViewById(R.id.productName)).setText(product.substring(0,10));
         ((ImageView)convertView.findViewById(R.id.productImage)).setImageDrawable(a.getDrawable(position));
         ((TextView)convertView.findViewById(R.id.productPrice)).setText(priceVisible+"");
 

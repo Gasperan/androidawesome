@@ -27,7 +27,7 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
 
-    List<String> indexItems;
+    List<String> indexItems = new ArrayList<>();
     TextView t;
 
     @Override
@@ -48,10 +48,13 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
         mSharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
         mEditor = mSharedPreferences.edit();
         Set<String> set1 = mSharedPreferences.getStringSet(SHOPPING_CART,null);
-        indexItems = new ArrayList(set1);
-        System.out.println("shared_preferencesssssss: " +indexItems);
-        doInBackground();
 
+        if (set1 != null) {
+            indexItems = new ArrayList(set1);
+            System.out.println("shared_preferencesssssss: " +indexItems);
+        }
+
+        doInBackground();
     }
 
     private void getListDataResponse(List<String> indexItems) {
