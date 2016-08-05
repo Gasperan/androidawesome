@@ -119,11 +119,6 @@ public class ShoppingBagActivity extends AppCompatActivity implements OnItemClic
 
 
     @Override
-    public void onBackPressed() {
-        SurveyHandler.handleSurvey(this);
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         TrackerHelper.nameScreen(this);

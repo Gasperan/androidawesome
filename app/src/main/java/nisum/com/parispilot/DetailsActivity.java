@@ -197,11 +197,6 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        SurveyHandler.handleSurvey(this);
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         TrackerHelper.nameScreen(this);
