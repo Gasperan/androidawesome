@@ -46,6 +46,8 @@ public class DetailsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_details);
 
+        TrackerHelper.initTracker(getApplication());
+
         mainImage = (ImageView) findViewById(R.id.main_image);
         position = getElementPosition(savedInstanceState);
         price = (TextView) findViewById(R.id.title);
@@ -111,6 +113,9 @@ public class DetailsActivity extends AppCompatActivity {
         mEditor = mSharedPreferences.edit();
         Set<String> set1 = mSharedPreferences.getStringSet(SHOPPING_CART,null);
         System.out.println("shared_preferences: " + set1);
+
+        //Tracker
+        TrackerHelper.sendEvent("ShoppinList", "agregado producto");
     }
 
     @Override
@@ -144,5 +149,11 @@ public class DetailsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         SurveyHandler.handleSurvey(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        TrackerHelper.nameScreen(this);
     }
 }
