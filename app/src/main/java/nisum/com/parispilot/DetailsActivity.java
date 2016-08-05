@@ -36,6 +36,8 @@ public class DetailsActivity extends AppCompatActivity {
     private static final String SHOPPING_CART = "shopping_cart";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     private ImageView mainImage;
     private String title;
@@ -97,6 +99,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     private void presentShowcaseAddProduct() {
 
+        /*
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -105,7 +108,7 @@ public class DetailsActivity extends AppCompatActivity {
                 Target viewTarget = new Target() {
                     @Override
                     public Point getPoint() {
-                        return new ViewTarget(findViewById(R.id.fab)).getPoint();
+                       // return new ViewTarget(findViewById(R.id.fab)).getPoint();
                     }
                 };
 
@@ -127,7 +130,7 @@ public class DetailsActivity extends AppCompatActivity {
                 showcaseView.setButtonPosition(lps);
 
             }
-        }, 1000);
+        }, 1000);*/
     }
 
     @Override
