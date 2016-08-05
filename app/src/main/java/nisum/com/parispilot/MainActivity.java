@@ -124,6 +124,9 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu, menu);
 
         if (!sharedPreferences.getBoolean("showcaseLoaded", false)) {
+            editor = sharedPreferences.edit();
+            editor.putBoolean("showcaseLoaded", true);
+            editor.commit();
             presentShowcaseView();
         }
 

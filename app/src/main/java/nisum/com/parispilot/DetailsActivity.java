@@ -36,8 +36,8 @@ public class DetailsActivity extends AppCompatActivity {
     private static final String SHOPPING_CART = "shopping_cart";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
+    //private SharedPreferences sharedPreferences;
+    //private SharedPreferences.Editor editor;
 
     private ImageView mainImage;
     private String title;
@@ -85,15 +85,16 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
+        /*
         sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
 
         if (!sharedPreferences.getBoolean("showcaseLoaded", false)) {
             editor = sharedPreferences.edit();
             editor.putBoolean("showcaseLoaded", true);
             editor.commit();
-            //presentShowcaseAddProduct();
+            presentShowcaseAddProduct();
         }
-
+        */
 
     }
 
