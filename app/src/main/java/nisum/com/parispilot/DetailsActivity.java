@@ -91,7 +91,7 @@ public class DetailsActivity extends AppCompatActivity {
             editor = sharedPreferences.edit();
             editor.putBoolean("showcaseLoaded", true);
             editor.commit();
-            presentShowcaseAddProduct();
+            //presentShowcaseAddProduct();
         }
 
 
@@ -99,7 +99,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     private void presentShowcaseAddProduct() {
 
-        /*
+
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -108,7 +108,7 @@ public class DetailsActivity extends AppCompatActivity {
                 Target viewTarget = new Target() {
                     @Override
                     public Point getPoint() {
-                       // return new ViewTarget(findViewById(R.id.fab)).getPoint();
+                        return new ViewTarget(findViewById(R.id.button)).getPoint();
                     }
                 };
 
@@ -130,7 +130,7 @@ public class DetailsActivity extends AppCompatActivity {
                 showcaseView.setButtonPosition(lps);
 
             }
-        }, 1000);*/
+        }, 1000);
     }
 
     @Override

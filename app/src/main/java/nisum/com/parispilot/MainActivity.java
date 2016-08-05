@@ -79,8 +79,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         showcaseView.hide();
-                        //presentShowcaseList(1000);
-                        Toast.makeText(MainActivity.this,"Ahora cambiar a activity DetailsActivity",Toast.LENGTH_SHORT).show();
                     }
                 });
 
