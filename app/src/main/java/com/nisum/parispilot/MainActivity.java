@@ -1,4 +1,4 @@
-package nisum.com.parispilot;
+package com.nisum.parispilot;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
