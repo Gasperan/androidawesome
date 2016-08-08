@@ -1,21 +1,15 @@
-package nisum.com.parispilot;
+package com.nisum.parispilot2;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Looper;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.InputQueue;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.os.Handler;
 import android.widget.TextView;
@@ -25,7 +19,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import nisum.com.parispilot.adapters.ListItemViewAdapter;
+import com.nisum.parispilot2.adapters.ListItemViewAdapter;
 
 public class ShoppingBagActivity extends AppCompatActivity implements OnItemClicked{
 

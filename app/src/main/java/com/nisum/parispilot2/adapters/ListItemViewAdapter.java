@@ -1,27 +1,20 @@
-package nisum.com.parispilot.adapters;
+package com.nisum.parispilot2.adapters;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
-import nisum.com.parispilot.OnItemClicked;
-import nisum.com.parispilot.R;
-import nisum.com.parispilot.models.Item;
+import com.nisum.parispilot2.OnItemClicked;
+import com.nisum.parispilot2.R;
 
 public class ListItemViewAdapter extends BaseAdapter {
     private static final String[] daysOfWeek = {"1"};

@@ -1,13 +1,11 @@
-package nisum.com.parispilot;
+package com.nisum.parispilot2;
 
 import android.app.Application;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
-/**
- * Created by nisum on 8/1/16.
- */
+
 public class AnalyticsApplication {
     private static Tracker tracker;
 

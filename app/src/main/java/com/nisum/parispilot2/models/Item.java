@@ -1,4 +1,4 @@
-package nisum.com.parispilot.models;
+package com.nisum.parispilot2.models;
 
 /**
  * Created by thomas on 02-08-16.

@@ -1,4 +1,4 @@
-package nisum.com.parispilot;
+package com.nisum.parispilot2;
 
 import android.content.Intent;
 import android.os.Bundle;
