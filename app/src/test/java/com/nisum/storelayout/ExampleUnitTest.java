@@ -1,4 +1,4 @@
-package com.nisum.parispilot;
+package com.nisum.storelayout;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.nisum.parispilot;
+package com.nisum.storelayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
