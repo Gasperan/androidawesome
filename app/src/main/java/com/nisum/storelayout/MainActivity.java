@@ -1,5 +1,6 @@
 package com.nisum.storelayout;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setTitle("Paris Pilot");
+        setTitleColor(Color.parseColor("#2B8DE1"));
 
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

@@ -2,21 +2,6 @@
 
 <resources>
     <string name="app_name">Store Layout</string>
-    <string-array name ="categories">
-        <item>Electro</item>
-        <item>Tecnología</item>
-        <item>Línea Blanca</item>
-        <item>Dormitorio</item>
-        <item>Muebles</item>
-        <item>Deco</item>
-        <item>Moda</item>
-        <item>Calzado</item>
-        <item>Belleza</item>
-        <item>Desportes</item>
-        <item>Infantil</item>
-        <item>Juguetes</item>
-    </string-array>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
