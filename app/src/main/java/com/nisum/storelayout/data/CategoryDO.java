@@ -7,6 +7,11 @@ public class CategoryDO {
     private String name;
     private byte cod;
 
+    public CategoryDO(byte cod, String name){
+        this.cod = cod;
+        this.name = name;
+    }
+
     public byte getCod() {
         return cod;
     }
