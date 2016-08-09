@@ -1,3 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
-    <string name="app_name">Paris Pilot</string>
+    <string-array name ="categories">
+        <item>Electro</item>
+        <item>Tecnología</item>
+        <item>Línea Blanca</item>
+        <item>Dormitorio</item>
+        <item>Muebles</item>
+        <item>Deco</item>
+        <item>Moda</item>
+        <item>Calzado</item>
+        <item>Belleza</item>
+        <item>Desportes</item>
+        <item>Infantil</item>
+        <item>Juguetes</item>
+    </string-array>
 </resources>
