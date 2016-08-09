@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_camara" android:icon="@android:drawable/ic_menu_camera"
+            android:title="Import" />
+        <item android:id="@+id/nav_gallery" android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Gallery" />
+        <item android:id="@+id/nav_slideshow" android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="Slideshow" />
+        <item android:id="@+id/nav_manage" android:icon="@android:drawable/ic_menu_manage"
+            android:title="Tools" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_share"
+                android:title="Share" />
+            <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>-->
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/electro" android:title="Electro"/>
+        <item android:id="@+id/tecno" android:title="Tecnología"/>
+        <item android:id="@+id/linea_blanca" android:title="Línea Blanca"/>
+        <item android:id="@+id/dormitorio" android:title="Dormitorio"/>
+        <item android:id="@+id/muebles" android:title="Muebles"/>
+        <item android:id="@+id/deco" android:title="Deco"/>
+        <item android:id="@+id/moda" android:title="Moda"/>
+        <item android:id="@+id/calzado" android:title="Calzado"/>
+        <item android:id="@+id/belleza" android:title="Belleza"/>
+        <item android:id="@+id/deportes" android:title="Deportes"/>
+        <item android:id="@+id/infantil" android:title="Infantil"/>
+        <item android:id="@+id/juguetes" android:title="Juguetes"/>
+    </group>
+
+
+</menu>
