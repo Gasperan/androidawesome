@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setTitle("Paris Pilot");
-        setTitleColor(Color.parseColor("#2B8DE1"));
+        toolbar.setTitle("Paris Pilot");
+        toolbar.setTitleTextColor(Color.parseColor("#2B8DE1"));
 
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

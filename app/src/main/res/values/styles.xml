@@ -22,5 +22,4 @@
         <item name="spinBars">true</item>
         <item name="color">@color/colorPrimaryDark</item>
     </style>
-
 </resources>
